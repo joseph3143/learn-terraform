@@ -5,8 +5,8 @@ data "aws_ami" "ami" {
 }
 
 resource "aws_instance" "frontend" {
-  ami = "ami-0a017d8ceb274537d"
-  instance_type = "t3.micro"
+  ami                    = data.aws_ami.ami.image_id
+  instance_type          = "t3.micro"
   vpc_security_group_ids = ["sg-064d0313949c3719d"]
   tags = {
     Name = "frontend"
