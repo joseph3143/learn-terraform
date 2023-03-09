@@ -4,7 +4,7 @@ data "aws_ami" "ami" {
   owners = ["973714476881"]
 }
 
-resource "aws_instance" "frontend" {                      #create 5 instances
+resource "aws_instance" "frontend" {                      #create 5 instances if count = 5
   count                  = length(var.instances)
   ami                    = data.aws_ami.ami.image_id
   instance_type          = "t3.micro"
@@ -14,4 +14,8 @@ resource "aws_instance" "frontend" {                      #create 5 instances
 
 variable "instances" {
   default = ["cart", "catalogue", "user", "payment", "shipping"]
+}
+
+output "public-ip" {
+  value = aws_instance.frontend.public_ip
 }
