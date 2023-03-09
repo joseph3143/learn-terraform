@@ -50,15 +50,15 @@ variable "b1" {
   default = [
     {
       course_name = "aws"
-      trainer_name = "raghu sir"
+      trainer_name = "raju"
     },
     {
       course_name = "devops"
-      trainer_name = "reddy sir"
+      trainer_name = "ravi"
     }
   ]
 }
 
-output "course_name" {
+output "course_names" {
   value = var.b1.*.course_name
 }
