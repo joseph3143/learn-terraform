@@ -82,6 +82,7 @@ resource "aws_route53_record" "shipping" {
   ttl     = 30
   records = [aws_instance.shipping.private_ip]
 }
+
 resource "aws_instance" "payment" {
   ami = "ami-0a017d8ceb274537d"
   instance_type = "t3.micro"
