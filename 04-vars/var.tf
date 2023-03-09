@@ -54,7 +54,7 @@ variable "b1" {
     },
     {
       course_name = "devops"
-      course_name = "reddy sir"
+      trainer_name = "reddy sir"
     }
   ]
 }
