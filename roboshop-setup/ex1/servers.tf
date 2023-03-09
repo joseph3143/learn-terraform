@@ -147,7 +147,7 @@ resource "aws_route53_record" "redis" {
   name    = "redis-dev.devopsculture.online"
   type    = "A"
   ttl     = 30
-  records = [aws_instance.redis.private_ip]
+  records = [aws_instance.redis.privapte_ip]
 }
 resource "aws_instance" "rabbitmq" {
   ami = "ami-0a017d8ceb274537d"
