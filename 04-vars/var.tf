@@ -36,7 +36,7 @@ variable "sample6" {
 
 variable "sample7" {
   default = {
-    string = "HEllo",
+    string = "Hello",
     number = 100,
     boolean = true
   }
