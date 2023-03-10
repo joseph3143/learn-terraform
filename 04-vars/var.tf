@@ -46,7 +46,7 @@ output "types" {
   value = "Variable sample5 - ${var.sample5}, First value in list - ${var.sample6[0]}, Boolean Value of Map = ${var.sample7["boolean"]}"
 }*/
 
-variable "d1" {
+variable "b1" {
   default = [
     {
       course_name = "aws"
@@ -60,5 +60,6 @@ variable "d1" {
 }
 
 output "course_names" {
-  value = var.d1.*.course_name
+  value = var.b1.*.course_name
+  value = var.b1.*.trainer_name
 }
