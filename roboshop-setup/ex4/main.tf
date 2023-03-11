@@ -1,4 +1,4 @@
-/*
+
 module "ec2" {
   for_each = var.instances
   source = "./ec2"                                  ## Main Root Module
@@ -22,4 +22,3 @@ variable "instances" {
     }
   }
 }
-*/
