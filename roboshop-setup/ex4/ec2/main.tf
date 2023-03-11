@@ -7,13 +7,13 @@
  resource "aws_instance" "ec2" {
    ami                    = data.aws_ami.ami.image_id
    instance_type          = var.instance_type
-   vpc_security_group_ids = ["sg-064d0313949c3719d"]
+   vpc_security_group_ids = [var.sg_id]
    tags = {
      Name = "var.component"
    }
  }
 
- resource "aws_route53_record" "frontend" {
+ resource "aws_route53_record" "record" {
    zone_id = "Z0628828KZGH4QGSXZXN"
    name    = "${var.component}-dev.devopsculture.online"
    type    = "A"
@@ -23,3 +23,4 @@
 
  variable "component" {}
  variable "instance_type" {}
+ variable "sg_id" {}
